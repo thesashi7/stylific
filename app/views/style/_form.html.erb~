@@ -1,0 +1,37 @@
+<%= form_for(@preference) do |p| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "error") %> error:</h2>
+
+      <ul>
+      <% @preference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= p.label :primaryStyle %><br>
+    <%= p.text_field :primaryStyle %>
+  </div>
+  <div class="field">
+    <%= p.label :secondaryStyle %><br>
+    <%= p.text_field :secondaryStyle %>
+  </div>
+  <div class="field">
+    <%= p.label :size %><br>
+    <%= p.text_field :size %>
+  </div>
+	 <div class="field">
+    <%= p.label :height %><br>
+    <%= p.text_field :height %>
+  </div>
+	 <div class="field">
+    <%= p.label :shoeSize %><br>
+    <%= p.text_field :shoeSize %>
+  </div>
+  <div class="actions">
+    <%= p.submit("Enter") %>
+  </div>
+<% end %>
