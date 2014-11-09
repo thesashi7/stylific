@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 	resources :preferences, :controller => "register", :path => "register"  # For the helper tag to recognize preferences_path
 	resources :customers, :controller => "register", :path => "register#registerCustomer"
 	match 'registerCustomer' => 'register#registerCustomer', :as =>'registerCustomer', :via => [:post]
+        get '/about' => 'pages#about'
+        get '/home' => 'pages#index'
+        get '/contact' => 'pages#contact'
+	get '/login' => 'pages#login'
+        get '/getstarted' => 'pages#get_started'
+	get '/register' => 'pages#get_started'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
