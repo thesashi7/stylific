@@ -11,3 +11,17 @@ form-horizontal
 {
 	background-color: red;
 }
+
+.img-label{
+	border: 4px solid #eee;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.red-border{
+	border: 4px solid #c0d890;
+}
+
+input[type=checkbox]{
+	display: none;
+}

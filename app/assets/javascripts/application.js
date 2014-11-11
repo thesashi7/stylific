@@ -16,3 +16,9 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+$(document).ready(function(){
+	$("label").click(function(){
+		$(this).toggleClass("red-border");
+	});
+});
