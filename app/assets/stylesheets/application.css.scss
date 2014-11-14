@@ -8,6 +8,10 @@ body
 	background-color: #eee;
 }
 
+.center-text {
+	text-align: center;
+}
+
 form-horizontal
 {
 	background-color: red;
@@ -128,3 +132,39 @@ margin-bottom: 0em;
 }
 
 //--- END VERTICAL OFFSET --------------------------
+
+//--- DISPLAY CONTENT DESKTOP/MOBILE ONLY ------
+.screen-only
+{
+  display: block;
+}
+
+.mobile-only
+{
+  display: none;
+}
+
+.mobile-only .jumbotron
+{
+  height: 300px;
+}
+
+@media screen and (max-width: 480px)
+{
+  .screen-only
+  {
+    display: none;
+  }
+  .mobile-only
+  {
+    display: block;
+  }
+}
+
+//---------
+
+.darken-bg
+{
+    background-color: rgba(0,0,0,0.3);
+    padding-bottom: 20px;
+}
