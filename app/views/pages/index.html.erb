@@ -9,7 +9,7 @@
 -->
 
 <!-- BIG HEADER -->
-<div id="section1">
+<div id="section1" class="">
 	
 	<div class="jumbotron">
 		<div class="container ">
@@ -33,25 +33,25 @@
 </div>
 
 <!-- HOW IT WORKS -->
-<div id="section2">
+<div id="section2" class="vert-offset-top-5">
 	<div id="how-it-works" class="container underline-div">
 		<h1 class="center-text">How it works</h1>
 			<div class="row center-text">
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img src="css/bp.gif" alt="...">
+						<img src="assets/bp.gif" alt="...">
 						<h3>1. Sign up</h3>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<div class="thumbnail">
-					<img src="css/bp.gif" alt="...">
+					<img src="assets/bp.gif" alt="...">
 					<h3>2. Choose your style</h3>
 				</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<div class="thumbnail">
-					<img src="css/bp.gif" alt="...">
+					<img src="assets/bp.gif" alt="...">
 					<h3>3. Check your mailbox!</h3>
 				</div>
 			</div>
@@ -59,13 +59,75 @@
 	</div>
 </div>
 
+<hr>
+
 <!-- FEATURES -->
-<div id="section3">
-	
+<div id="section3" class="vert-offset-top-5">
+	<!-- features 1 -->
+	<div id="features" class="container underline-div feature">
+		<div class="row ">
+		    <div class="col-md-5">
+		      <img class="featurette-image img-responsive" src="assets/bp.gif" alt="Generic placeholder image">
+		    </div>
+		    <div class="col-md-7">
+		      <h2>Overnight delivery. <br><small>Yes, Flash brings it himself.</small> </h2>
+		      <p class="lead">
+		      	Some emergeny putted you in a need for upgrade of your wardrobe before sun goes up? We've got you covered. 
+		      	Order overnight delivery and recieve your gear before coffee machine 
+		      	finishes its job.
+		      </p>
+		      <%= link_to "Order now", {}, :class => "btn btn-warning btn-lg" %>
+		    </div>
+		</div>
+  	</div>
+  
+	<hr>
+  
+  	<!-- features 2 -->
+	<div class="container underline-div feature">
+		<div class="row">
+		  <div class="col-md-7">
+		    <h2>Change you style any time. Anywhere. <br><small>Except highspeed freeways.</small> </h2>
+		    <p class="lead">about:blankabout:blank
+		    	Waiting in a line, stuck in traffic, on a runnign track, can't go to sleep
+		    	- with mobile friendly website (or app) it is easy to change your taste for fasion
+		    	at any of these occasion (<- does it make sense?). 
+		    </p>
+		  </div>
+		  <div class="col-md-5">
+		    <img class="featurette-image img-responsive" src="assets/bp.gif" alt="Generic placeholder image">
+		  </div>
+		</div>
+	</div>
 </div>
 
+<hr>
+
 <!-- PRICE -->
-<div id="section4">
-	
+<div id="section4" class="vert-offset-top-5">
+	<!-- pricing -->
+	<div id="pricing" class="container underline-div">
+		<h1 class="center-text">Pricing</h1>
+		<div class="row center-text">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<h3>Regular</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula in neque vehicula sollicitudin. Quisque sed ipsum sit amet.</p>
+				<a class="btn btn-success btn-lg" role="button">ORDER</a>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<h3>Overnight</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula in neque vehicula sollicitudin. Quisque sed ipsum sit amet.</p>
+				<a class="btn btn-success btn-lg" role="button">ORDER</a>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container center-text vert-offset-top-4 vert-offset-bottom-2">
+		<div class="row">
+			<div class="col-xs-12">
+				<%= link_to "GET STARTED", {:controller => :register, :action => :index}, :class => "btn btn-primary btn-lg" %>
+			</div>
+		</div>
+	</div>
 </div>
 
