@@ -61,6 +61,41 @@
        <input id="style3" type="checkbox" value="style3" autocomplete="off"> <br>
     </div>
   </div>
+  
+  <div class="field form-group">
+    <%= p.label(:height, class: "col-sm-2 control-label") %>
+    <div class="col-sm-2">
+      <select class="form-control" autocomplete="false">
+        <option class="hide-option" value="Height">Height</option>
+        <option value="5.6">5'6"</option>
+        <option value="5.7">5'7"</option>
+        <option value="5.8">5'8"</option>
+        <option value="5.9">5'9"</option>
+      </select>
+    </div>
+    
+    <%= p.label(:waist, class: "col-sm-2 control-label") %>
+    <div class="col-sm-2">
+      <select class="form-control" autocomplete="false">
+        <option class="hide-option" value="Weight">Weight</option>
+        <option value="25">25</option>
+        <option value="28">28</option>
+        <option value="30">30</option>
+        <option value="34">34</option>
+      </select>
+    </div>
+    
+    <%= p.label(:shoeSize, class: "col-sm-2 control-label") %>
+    <div class="col-sm-2">
+      <select class="form-control" autocomplete="false">
+        <option class="hide-option" value="Shoe size">Shoe size</option>
+        <option value="5.6">5'6"</option>
+        <option value="5.7">5'7"</option>
+        <option value="5.8">5'8"</option>
+        <option value="5.9">5'9"</option>
+      </select>
+    </div>
+  </div>
 
   <div class="actions">
     <%= p.submit("Enter", class: "pull-right btn btn-default") %>
