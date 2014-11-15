@@ -1,5 +1,5 @@
 
-<%= link_to "Register", :controller => :register, :action => :index %>
+
 
 
 <!--
@@ -24,7 +24,7 @@
 			<div class="row mobile-only darken-bg">
 				<div class="col-md-4 center-text">
 					<h4>NO MORE LOOKING FOR COOL CLOTH. <BR>THEY NOW COME DIRECTLY TO YOUR HOUSE. </h4>
-					<a id="getting-started-button-mobile" class="btn btn-primary btn-lg pull-right" href="#" role="button">GET STARTED</a>
+					<%= link_to "GET STARTED", {:controller => :register, :action => :index}, :class => "btn btn-primary btn-lg pull-right" %>
 				</div>
 			</div>
 		</div>
