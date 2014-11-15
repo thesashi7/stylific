@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
 	root "pages#index"
-     	devise_for :customer
+  
+  devise_for :customer
 	resources :register, :pages
 	resources :preferences, :controller => "register", :path => "register"  # For the helper tag to recognize preferences_path
 	resources :customers, :controller => "register", :path => "register#registerCustomer"
 	match 'registerCustomer' => 'register#registerCustomer', :as =>'registerCustomer', :via => [:post]
-
+  match 'get_started' => 'pages#get_started', :as =>'get_started', :via => [:get]
+  
 	get '/about' => 'pages#about'
-        get '/home' => 'pages#index'
-        get '/contact' => 'pages#contact'
-	get '/login' => 'pages#login'
-        get '/getstarted' => 'register#index'
-	get '/register' => 'pages#get_started'
-	get 'pages#get_started' => 'register#index'
+  get '/home' => 'pages#index'
+    #    get '/contact' => 'pages#contact'
+	#get '/login' => 'pages#login'
+   #get '/get_started' => 'register#index'
+	#get '/register' => 'pages#get_started'
+  #get '/register/show' => 'register#show'
+	#get 'pages#get_started' => 'register#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
