@@ -1,9 +1,12 @@
 class RegisterController < ApplicationController
   @@id = 0
+
+  before_action :set_Customer, only: [:show]
+  before_action :set_Preference, only: [:index]
 	
   def index
-    @preference = Preference.new
-    @@id=0
+    #@preference = Preference.new
+    #@@id=0
   end
 
   def create
@@ -24,21 +27,22 @@ class RegisterController < ApplicationController
    end
 
   def show
-    @customer = Customer.new
-
+    #@customer = Customer.new
 		
   end
 
   def registerCustomer
-    
-      @customer = Customer.new(params.require(:customer).permit(:email, :password))
-      @customer.preference_id = @@id
 
-      if @customer.save
-         preference = Preference.find(@@id)
-         preference.customer_id = @customer.id
-         preference.save
-      else 
+      if Preference.exists?(:id => @@id)
+
+         @customer = Customer.new(params.require(:customer).permit(:email, :password))
+         @customer.preference_id = @@id
+
+         if @customer.save
+            # preference = Preference.find(@@id)
+            preference.customer_id = @customer.id
+            preference.save
+         else 
            #if(Preference.where(@@id).empty? == true) <-- this doesn't work from here for some reason (most likely because of the delay in 			linking)
       	#if(@@id !=-1)
 	#      Preference.find(@@id).destroy      
@@ -47,10 +51,14 @@ class RegisterController < ApplicationController
         #end
         #@preference = Preference.new
         #@@id=0
-        render :show 
+           render :show 
            
-      end	
-      
+         end	
+      else
+  	# set_Preference
+     action :index
+	 #render :index
+      end
     	
   end
 
@@ -59,6 +67,16 @@ class RegisterController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def preference_params
       params.require(:preference).permit(:primaryStyle, :secondaryStyle, :size, :height, :shoeSize)
+    end
+    
+
+    def set_Preference
+       @preference = Preference.new
+       @@id=0
+    end
+
+    def set_Customer
+       @customer = Customer.new
     end
 
 end	
