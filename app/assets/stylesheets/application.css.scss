@@ -7,6 +7,7 @@ body
 	background-color: #eee;
 }
 
+
 .center-text {
 	text-align: center;
 }
@@ -171,4 +172,24 @@ margin-bottom: 0em;
 .navbar-bottom
 {
 	margin-bottom: 0px;
+}
+
+ul li
+{
+	display: inline-block;
+	padding: 5px 5px 0px 0px;
+}
+
+#footer
+{
+	maring: 0px;
+	padding: 5px;
+	background-color: #f8f8f8;
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+}
+
+.padding-top-60
+{
+	padding-top: 60px;
 }
