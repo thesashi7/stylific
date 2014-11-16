@@ -1,38 +1,58 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">L O G O</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="#how-it-works">How it works</a></li>
-					<li><a href="#features">Features</a></li>
-					<li><a href="#pricing">Pricing</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown navbar-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log in <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<form class="navbar-form navbar-login" role="form">
-								<div class="form-group">
-									<input type="text" placeholder="Email" class="form-control">
-								</div>
-								<div class="form-group">
-									<input type="password" placeholder="Password" class="form-control">
-								</div>
-								<button type="submit" class="btn btn-success">Sign in</button> 
-								<a href="#" class="pull-right"><small>Forgot?</small></a>
-							</form>
-						</ul>
-					</li>
-				</ul>
-			</div><!--/.navbar-collapse -->
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="navbar-brand" href="#home-top">L O G O</a>
+				</li>
+			</ul>
+			
+
 		</div>
-	</nav>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#how-it-works">How it works</a></li>
+				<li><a href="#features">Features</a></li>
+				<li><a href="#pricing">Pricing</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log in <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<form class="navbar-form navbar-login" role="form">
+							<div class="form-group">
+								<input type="text" placeholder="Email" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="password" placeholder="Password" class="form-control">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success">Sign in</button> 
+							</div>
+							<div class="form-group">
+								<a href="#" class="col-xs-offset"><small>Forgot?</small></a>
+							</div>
+						</form>
+					</ul>
+				</li>
+				<li>
+					<%= button_to("Get Started", 
+								{ :controller => "register", :action => "index" }, 
+								{:method => :get, :class => "btn btn-primary navbar-btn"}) %>
+
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				
+			</ul>
+		</div><!--/.navbar-collapse -->
+	</div>
+</nav>
+
+
+
+
