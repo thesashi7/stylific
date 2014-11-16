@@ -39,9 +39,10 @@ class RegisterController < ApplicationController
          @customer.preference_id = @@id
 
          if @customer.save
-            # preference = Preference.find(@@id)
+            preference = Preference.find(@@id)
             preference.customer_id = @customer.id
             preference.save
+            @@id=0
          else 
            #if(Preference.where(@@id).empty? == true) <-- this doesn't work from here for some reason (most likely because of the delay in 			linking)
       	#if(@@id !=-1)
