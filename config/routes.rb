@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
+
 	root "pages#index"
   
   devise_for :customer
+
 	resources :register, :pages
 	resources :preferences, :controller => "register", :path => "register"  # For the helper tag to recognize preferences_path
 	resources :customers, :controller => "register", :path => "register#registerCustomer"
+  resource :sessions, :only => [:new, :create, :destroy]
+
 	match 'registerCustomer' => 'register#registerCustomer', :as =>'registerCustomer', :via => [:post]
   match 'get_started' => 'pages#get_started', :as =>'get_started', :via => [:get]
-  
+
+
 	get '/about' => 'pages#about'
   get '/home' => 'pages#index'
+  get '/login' => "sessions#new", :as => "login"
+  get '/logout' => "sessions#destroy", :as => "logout"
+
     #    get '/contact' => 'pages#contact'
 	#get '/login' => 'pages#login'
    #get '/get_started' => 'register#index'
