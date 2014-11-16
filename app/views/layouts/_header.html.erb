@@ -7,19 +7,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">S T Y L E</a>
-			<a class="navbar-brand" href="#">L O G O</a>
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="navbar-brand" href="#home-top">L O G O</a>
+				</li>
+			</ul>
+			
 
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#how-it-works">How it works</a></li>
 				<li><a href="#features">Features</a></li>
 				<li><a href="#pricing">Pricing</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown navbar-right">
+				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log in <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<form class="navbar-form navbar-login" role="form">
@@ -38,6 +39,15 @@
 						</form>
 					</ul>
 				</li>
+				<li>
+					<%= button_to("Get Started", 
+								{ :controller => "register", :action => "index" }, 
+								{:method => :get, :class => "btn btn-primary navbar-btn"}) %>
+
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				
 			</ul>
 		</div><!--/.navbar-collapse -->
 	</div>
