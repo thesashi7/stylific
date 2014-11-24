@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
       if(user && user.valid_password?(params[:password]))
          session[:user_id] = user.id
-         redirect_to root_path, :notice => "Logged in successfully"
+         redirect_to accounts_path, :notice => "Logged in successfully"
       else
          flash.now[:alert] = "Invalid login/password combination"
          render :action => 'new'
