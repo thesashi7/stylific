@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   get '/home' => 'pages#index'
   get '/login' => "sessions#new", :as => "login"
   get '/logout' => "sessions#destroy", :as => "logout"
-  get '/accounts'=> "accounts#news"
+  get '/news'=> "accounts#news"
+  get '/profile' => "accounts#profile"
+  get '/settings' => "accounts#settings"
 
     #    get '/contact' => 'pages#contact'
 	#get '/login' => 'pages#login'
