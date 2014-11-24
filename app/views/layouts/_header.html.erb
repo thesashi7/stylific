@@ -19,9 +19,11 @@
 			<ul class="nav navbar-nav navbar-right">
 			
 				<% if(request.original_url != "http://localhost:3000/register") %>
-					<li><a href="#how-it-works">How it works</a></li>
-					<li><a href="#features">Features</a></li>
-					<li><a href="#pricing">Pricing</a></li>
+					<% if(!logged_in?) %>
+						<li><a href="#how-it-works">How it works</a></li>
+						<li><a href="#features">Features</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+					<% end %>
 				<% end %>
                             
 				 <% if logged_in? %>
