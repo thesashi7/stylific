@@ -2,13 +2,28 @@
 	<li role="presentation"><%= link_to "News", news_path %></li>
 	<li role="presentation"><%= link_to "Profile", profile_path %></li>
 	<li role="presentation" class="active"><%= link_to	"Settings", settings_path %></li>
+	<li role="presentation"><%= link_to	"Messages", messages_path %></li>
 </ul>
 
 <div id="content">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+	<div class="well">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title">
+					Info for stylists
+				</div>
+			</div>
+			<div class="panel-body">
+				<%= form_tag({},{:class => "form-horizontal"}) do %>
+					<div class="form-group">
+						<%= label_tag("Interests", nil, {class: "col-sm-2 control-label"}) %>
+						<div class="col-sm-10">
+							<%= text_field_tag("Interests", nil, options = {"class" => "form-control", "placeholder" => "separate with comas, ex.: sports, musicles, reading books"}) %>
+						</div>
+
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>

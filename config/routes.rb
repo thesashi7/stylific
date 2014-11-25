@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/profile' => "accounts#profile"
   get '/settings' => "accounts#settings"
   get '/messages' => "accounts#messages"
+  get '/post' => "stylists#post"
 
     #    get '/contact' => 'pages#contact'
 	#get '/login' => 'pages#login'
