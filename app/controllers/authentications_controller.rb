@@ -3,9 +3,10 @@ class AuthenticationsController < ApplicationController
 
 def create
   omniauth = request.env["omniauth.auth"]
+  
   authentication = Authentications.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 
-  if (authentication.nil?)
+  if (authentication.nil? && @@logingIn == 0)
      authentication = Authentications.new
      authentication.provider = omniauth['provider']
      authentication.uid = omniauth['uid']
@@ -26,6 +27,7 @@ def create
   elsif authentication.instance_of?(Authentications)
      user = Customer.where(:id => authentication.user_id).first
      session[:user_id] = user.id
+     @@logingIn=1
      redirect_to root_path, :notice => "Logged in successfully"
 
   end
