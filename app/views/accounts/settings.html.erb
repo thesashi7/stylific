@@ -40,6 +40,34 @@
 				</div>
 			</div>
 			<div class="form-group">
+			<%= label_tag("Size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select size</option>
+												<option>S</option>
+												<option>M</option>
+												<option>L</option>
+												<option>XL</option>".html_safe, {class: "form-control"})  %>  
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Height:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select height</option>
+												<option>5'8\"</option>
+												<option>6'1\"</option>
+												<option>6'2\"</option>".html_safe, {class: "form-control"})  %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Shoe size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select shoe size</option>
+												<option>9</option>
+												<option>9.5</option>
+												<option>10</option>".html_safe, {class: "form-control"})  %>
+				</div>
+			</div>
+			<div class="form-group">
 				<div class="col-sm-12">
 					<%= button_tag("Update", {class: "btn btn-default pull-right"})%>
 				</div>
