@@ -39,7 +39,7 @@
 					<%= text_field_tag("primaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group row">
 			<%= label_tag("Size:", nil, {class: "col-sm-2 control-label"}) %>
 				<div class="col-sm-2">
 					<%= select_tag("people", "	<option>Select size</option>
@@ -49,7 +49,7 @@
 												<option>XL</option>".html_safe, {class: "form-control"})  %>  
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group row">
 				<%= label_tag("Height:", nil, {class: "col-sm-2 control-label"}) %>
 				<div class="col-sm-2">
 					<%= select_tag("people", "	<option>Select height</option>
@@ -58,7 +58,7 @@
 												<option>6'2\"</option>".html_safe, {class: "form-control"})  %>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group row">
 				<%= label_tag("Shoe size:", nil, {class: "col-sm-2 control-label"}) %>
 				<div class="col-sm-2">
 					<%= select_tag("people", "	<option>Select shoe size</option>
