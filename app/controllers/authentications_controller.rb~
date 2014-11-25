@@ -6,6 +6,7 @@ def create
   
   authentication = Authentications.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 
+  #for registration
   if (authentication.nil? && @@logingIn == 0)
      authentication = Authentications.new
      authentication.provider = omniauth['provider']
@@ -24,11 +25,21 @@ def create
 	
      flash[:notice] = "Thanks for registering\n"
      redirect_to root_path 
+  #for logging in with registered provider
   elsif authentication.instance_of?(Authentications)
+     
+     if @@logingIn==1
      user = Customer.where(:id => authentication.user_id).first
      session[:user_id] = user.id
-     @@logingIn=1
+     @@logingIn=0
      redirect_to root_path, :notice => "Logged in successfully"
+     else
+     
+     redirect_to root_path, :notice => "You already have an account!\n Please logIn "
+     end
+   #
+  else
+   redirect_to root_path, :notice => "Sorry! You need to register first with your #{omniauth['provider']} oor add that to your account"
 
   end
 
