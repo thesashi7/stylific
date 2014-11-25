@@ -27,6 +27,12 @@
 				<% end %>
                             
 				 <% if logged_in? %>
+				 	<li>
+				 		<%= link_to "News", news_path %>
+				 		
+				 	</li>
+				 	<li><%= link_to "Profile", profile_path%></li>
+				 	<li><%= link_to "Settings", settings_path%></li>
 				 	<li><%= link_to "Inbox", messages_path%></li>
 				 	<li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar</a></li>
                     <li>  <%= link_to "Log Out", logout_path %> </li>
