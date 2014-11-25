@@ -12,4 +12,7 @@ class AccountsController < ApplicationController
 		
 	end
 	
+	def messages
+		
+	end
 end

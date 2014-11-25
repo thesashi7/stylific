@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/news'=> "accounts#news"
   get '/profile' => "accounts#profile"
   get '/settings' => "accounts#settings"
+  get '/messages' => "accounts#messages"
 
     #    get '/contact' => 'pages#contact'
 	#get '/login' => 'pages#login'
