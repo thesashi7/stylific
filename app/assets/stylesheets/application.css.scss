@@ -208,8 +208,12 @@ ul li
 	margin: 0 auto;
 }
 
-.panel, .panel-default{
+#posts .panel, .panel-default{
 	padding:20px;
+}
+
+#settings .panel, .panel-default{
+	padding:0px;
 }
 
 textarea{

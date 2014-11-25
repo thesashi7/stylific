@@ -27,7 +27,7 @@
 				<% end %>
                             
 				 <% if logged_in? %>
-				 	<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"> </span> Inbox <span class="badge">1</span></a></li>
+				 	<li><%= link_to "Inbox", messages_path%></li>
 				 	<li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar</a></li>
                     <li>  <%= link_to "Log Out", logout_path %> </li>
                  <% else %>
