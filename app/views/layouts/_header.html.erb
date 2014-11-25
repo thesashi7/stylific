@@ -19,13 +19,17 @@
 			<ul class="nav navbar-nav navbar-right">
 			
 				<% if(request.original_url != "http://localhost:3000/register") %>
-					<li><a href="#how-it-works">How it works</a></li>
-					<li><a href="#features">Features</a></li>
-					<li><a href="#pricing">Pricing</a></li>
+					<% if(!logged_in?) %>
+						<li><a href="#how-it-works">How it works</a></li>
+						<li><a href="#features">Features</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+					<% end %>
 				<% end %>
                             
 				 <% if logged_in? %>
-                      <li>  <%= link_to "Log Out", logout_path %> </li>
+				 	<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"> </span> Inbox <span class="badge">1</span></a></li>
+				 	<li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar</a></li>
+                    <li>  <%= link_to "Log Out", logout_path %> </li>
                  <% else %>
 				 <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Log in <span class="caret"></span></a>
