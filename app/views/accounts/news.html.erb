@@ -1,109 +1,46 @@
-<script>
-
-	$(document).ready(function() {
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,basicWeek,basicDay'
-			},
-			defaultDate: '2014-11-12',
-			editable: true,
-			eventLimit: true, // allow "more" link when too many events
-			events: [
-				{
-					title: 'All Day Event',
-					start: '2014-11-01'
-				},
-				{
-					title: 'Long Event',
-					start: '2014-11-07',
-					end: '2014-11-10'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2014-11-09T16:00:00'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2014-11-16T16:00:00'
-				},
-				{
-					title: 'Conference',
-					start: '2014-11-11',
-					end: '2014-11-13'
-				},
-				{
-					title: 'Meeting',
-					start: '2014-11-12T10:30:00',
-					end: '2014-11-12T12:30:00'
-				},
-				{
-					title: 'Lunch',
-					start: '2014-11-12T12:00:00'
-				},
-				{
-					title: 'Meeting',
-					start: '2014-11-12T14:30:00'
-				},
-				{
-					title: 'Happy Hour',
-					start: '2014-11-12T17:30:00'
-				},
-				{
-					title: 'Dinner',
-					start: '2014-11-12T20:00:00'
-				},
-				{
-					title: 'Birthday Party',
-					start: '2014-11-13T07:00:00'
-				},
-				{
-					title: 'Click for Google',
-					url: 'http://google.com/',
-					start: '2014-11-28'
-				}
-			]
-		});
-		
-	});
-
-</script>
-
-
-<ul class="nav nav-tabs nav-justified">
-	<li role="presentation" class="active"><%= link_to "News", news_path %></li>
-	<li role="presentation"><%= link_to "Profile", profile_path %></li>
-	<li role="presentation"><%= link_to	"Settings", settings_path %></li>
-	<li role="presentation"><%= link_to	"Messages", messages_path %></li>
-</ul>
-
-
-<div id="content">
-	<div class="row">
-		<div class="col-sm-8">
-			<div class="well">
-				<div id="posts">
-					<div id="post">
-						<div class="panel panel-default">
-							<div class="row">
-								<div class="col-xs-2" >
-										<div class="thumbnail">
-											<img src="assets/ph.jpg" alt="..." class="img-circle">
-										</div>
+<div class="page-header">
+	<h1>News</h1>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="well">
+			<div id="posts">
+				<div id="post">
+					<div class="panel panel-default">
+						<div class="row">
+							<div class="col-xs-2" >
+									<div class="thumbnail">
+										<img src="assets/ph.jpg" alt="..." class="img-circle">
 									</div>
-									<div class="col-xs-10" >
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									</div>
-									<div id="comments" class="col-xs-12">
-										<div class="well well-sm">
+								</div>
+								<div class="col-xs-10" >
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+								<div id="comments" class="col-xs-12">
+									<div class="">
+										<div class="comment">
+											<div class="row">
+												<div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2">
+													<div class="thumbnail">
+														<img src="assets/ph.jpg" alt="..." class="img-circle">
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-10">
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+													tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+													quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+													consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+													cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+													proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+												</div>
+											</div>
+											</div>
+											<hr>
 											<div class="comment">
 												<div class="row">
 													<div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2">
@@ -112,47 +49,27 @@
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-10">
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+														Lorem 
 													</div>
 												</div>
+											</div>
+											<hr>
+											<form>
+												<div class="form-group">
+													<textarea class="form-control"></textarea>
 												</div>
-												<hr>
-												<div class="comment">
-													<div class="row">
-														<div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-2">
-															<div class="thumbnail">
-																<img src="assets/ph.jpg" alt="..." class="img-circle">
-															</div>
-														</div>
-														<div class="col-xs-12 col-sm-10">
-															Lorem 
-														</div>
-													</div>
+												<div class="form-group">
+													<button class="btn btn-primary pull-right">Comment</button>
 												</div>
-												<hr>
-												<form>
-													<div class="form-group">
-														<textarea class="form-control"></textarea>
-													</div>
-													<button class="btn btn-primary">Comment</button>
-												</form>
-										</div>
+												
+											</form>
 									</div>
-							</div>
+								</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-4">
-			<div class="well">
-				<div id="calendar"></div>
-			</div>
-		</div>
 	</div>
 </div>
+
