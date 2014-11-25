@@ -1,0 +1,18 @@
+
+<div class="page-header">
+	<h2>Make a public post</h2>
+</div>
+<div class="well">
+	<%= form_tag do %>
+		<%= text_area_tag(:post, "", size: "24x6", class: "form-control") %>
+		<%= radio_button_tag(:audience, "child") %>
+		<%= label_tag(:audience_label, "Customers") %>
+		<%= radio_button_tag(:audience, "adult") %>
+		<%= label_tag(:audience_label, "Non customers") %>
+		<%= radio_button_tag(:audience, "adult") %>
+		<%= label_tag(:audience_label, "All") %>
+	<% end %>
+	<div id="image-upload">
+		Image uploading happens here.
+	</div>
+</div>
