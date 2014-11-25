@@ -7,8 +7,15 @@
 	border-top: 1px solid #ddd;
 	padding-left: 120px;
 	padding-right: 120px;
-	padding-top: 10px;
 }
 #comment{
 	min-height: 40px;	
+}
+
+#messages-container{
+	padding: 20px 20px 20px 20px
+}
+
+#conversation-container{
+	height: 500px;
 }
