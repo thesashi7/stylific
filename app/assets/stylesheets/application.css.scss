@@ -6,13 +6,14 @@
 //= require stylists
 //= require fullcalendar
 //= require fullcalendar.print
+//= require index2
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body
 {
-	padding-top: 60px;
+	padding-top: 55px;
 }
 
 
