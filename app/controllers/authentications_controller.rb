@@ -1,48 +1,99 @@
 class AuthenticationsController < ApplicationController
 
+#used to avoid conflicting emails from different providers  
+@@unique_email_marker=0
 
+#this action is a callback method meaning foreign providers callback
+#is directed to this module
 def create
-  omniauth = request.env["omniauth.auth"]
+  @omniauth = request.env["omniauth.auth"]
   
-  authentication = Authentications.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
+  authentication = Authentications.find_by_provider_and_uid(@omniauth['provider'], @omniauth['uid'])
 
-  #for registration
-  if (authentication.nil? && @@logingIn == 0)
+  if(@@logingIn ==0)
+     registering(authentication)
+  elsif(@@logingIn ==1)
+    signingIn(authentication)
+  end
+
+end
+
+private 
+
+#authentication is an instance of Authentication
+#registers the users with new authentication and provider
+#if user is already registered using a specefic provider then redirects the user
+# to the home page 
+def registering(authentication)
+
+   if (authentication.nil?)
      authentication = Authentications.new
-     authentication.provider = omniauth['provider']
-     authentication.uid = omniauth['uid']
+     authentication.provider = @omniauth['provider']
+     authentication.uid = @omniauth['uid']
      user = Customer.new
      #  authentication.user_id = user.id   Need to save the user first to generate the automated unique id
-     if (omniauth['info'])
-        user.name = omniauth['info']['name']
-        user.email = omniauth['info']['email']         #auth.info.email
+     if (@omniauth['info'])
+        user.name = @omniauth['info']['name']
+        user.email = @omniauth['info']['email']         #auth.info.email
         user.password = Devise.friendly_token[0,20]
      end
-     user.save
+     if (!user.save)
+        if(user.errors.added? :email, :taken)
+          user.email = new_email_from_existing(user.email)
+          user.save
+        end
+     end
      authentication.user_id = user.id
      authentication.save  
      session[:user_id] = user.id
-	
+  
      flash[:notice] = "Thanks for registering\n"
      redirect_to root_path 
-  #for logging in with registered provider
-  elsif authentication.instance_of?(Authentications)
-     
-     if (@@logingIn==1)
+    else 
+      redirect_to root_path, :notice => "You already have an account!\n Please logIn "
+      
+   end
+
+end
+
+#authentication is an instance of Authentication
+#signs in the user if the user is registered with the specefic provider
+#if the user is not registered with the provider then redirects to the home page with error message 
+def signingIn (authentication)
+
+  if authentication.instance_of?(Authentications)
      user = Customer.where(:id => authentication.user_id).first
      session[:user_id] = user.id
      @@logingIn=0
      redirect_to root_path, :notice => "Logged in successfully"
-     else
-     
-     redirect_to root_path, :notice => "You already have an account!\n Please logIn "
-     end
-   #
   else
-   redirect_to root_path, :notice => "Sorry! You need to register first with your #{omniauth['provider']} oor add that to your account"
+     @@logingIn=0
+     redirect_to root_path, :notice => "Sorry! You need to register first "
 
   end
 
+
+end 
+
+#oldEmail is the existing email or the email from which another email will be derived
+#Creats a new email by using the old email
+#returns the new email
+#Example :-
+#          oldEmail=another@email.com
+#          new =new_email_from_existing(oldEmail) 
+#          puts new 
+#           Output ::  another0@email.com
+def new_email_from_existing(oldEmail)
+  newEmail=""
+
+  oldEmail.split("").each do |a|
+     if(a == '@')
+        newEmail+= @@unique_email_marker.to_s
+        @@unique_email_marker+=1
+     end
+     newEmail+=a
+  end
+  newEmail
 end
 
 end
