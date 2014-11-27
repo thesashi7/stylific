@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/settings' => "accounts#settings"
   get '/messages' => "accounts#messages"
   get '/post' => "stylists#post"
+  get '/index2' => "index2#index2"
 
     #    get '/contact' => 'pages#contact'
 	#get '/login' => 'pages#login'
