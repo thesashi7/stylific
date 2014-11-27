@@ -1,0 +1,79 @@
+<div class="container">
+<div class="page-header">
+	<h1>Settings</h1>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="panel-title">
+			Info for stylists
+		</div>
+	</div>
+	<div class="panel-body">
+		<%= form_tag({},{:class => "form-horizontal"}) do %>
+			<div class="form-group">
+				<%= label_tag("Primary style:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-10">
+					<%= text_field_tag("primaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Secondary style:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-10">
+					<%= text_field_tag("secondaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-10">
+					<%= text_field_tag("primaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Height:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-10">
+					<%= text_field_tag("primaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag("Shoe size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-10">
+					<%= text_field_tag("primaryStyle", nil, options = {"class" => "form-control", "placeholder" => ""}) %>
+				</div>
+			</div>
+			<div class="form-group row">
+			<%= label_tag("Size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select size</option>
+												<option>S</option>
+												<option>M</option>
+												<option>L</option>
+												<option>XL</option>".html_safe, {class: "form-control"})  %>  
+				</div>
+			</div>
+			<div class="form-group row">
+				<%= label_tag("Height:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select height</option>
+												<option>5'8\"</option>
+												<option>6'1\"</option>
+												<option>6'2\"</option>".html_safe, {class: "form-control"})  %>
+				</div>
+			</div>
+			<div class="form-group row">
+				<%= label_tag("Shoe size:", nil, {class: "col-sm-2 control-label"}) %>
+				<div class="col-sm-2">
+					<%= select_tag("people", "	<option>Select shoe size</option>
+												<option>9</option>
+												<option>9.5</option>
+												<option>10</option>".html_safe, {class: "form-control"})  %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<%= button_tag("Update", {class: "btn btn-default pull-right"})%>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+</div>

@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   get '/home' => 'pages#index'
   get '/login' => "sessions#new", :as => "login"
   get '/logout' => "sessions#destroy", :as => "logout"
-  get '/news'=> "accounts#news"
-  get '/profile' => "accounts#profile"
-  get '/settings' => "accounts#settings"
-  get '/messages' => "accounts#messages"
+  get '/news'=> "customer#news"
+  get '/profile' => "customer#profile"
+  get '/settings' => "customer#settings"
+  get '/messages' => "customer#messages"
   get '/post' => "stylists#post"
   get '/index2' => "index2#index2"
 
