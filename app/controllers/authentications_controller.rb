@@ -40,6 +40,10 @@ def registering(authentication)
         user.email = @omniauth['info']['email']         #auth.info.email
         user.password = Devise.friendly_token[0,20]
      end
+
+     /=if (@omniauth['extra'])
+      user.tempInfo = @omniauth['extra']['raw_info']
+     end=/
     
      #need to check if preference exists
      preference = Preference.find_by_id(RegisterController.id)
@@ -51,7 +55,7 @@ def registering(authentication)
           user.save
         end
      end
-     
+
      preference.customer_id = user.id
      preference.save
 
