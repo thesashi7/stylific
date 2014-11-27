@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StylistsControllerTest < ActionController::TestCase
+class StylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
