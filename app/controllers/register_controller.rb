@@ -1,4 +1,5 @@
 class RegisterController < ApplicationController
+  cattr_accessor :id
   @@id = 0
 
   before_action :set_Customer, only: [:show]
@@ -44,7 +45,7 @@ class RegisterController < ApplicationController
             preference.save
             @@id=0
          else 
-           #if(Preference.where(@@id).empty? == true) <-- this doesn't work from here for some reason (most likely because of the delay in 			linking)
+        #if(Preference.where(@@id).empty? == true) <-- this doesn't work from here for some reason (most likely because of the delay in 			linking)
       	#if(@@id !=-1)
 	#      Preference.find(@@id).destroy      
 	 #     @@id = -1		  
@@ -56,8 +57,8 @@ class RegisterController < ApplicationController
            
          end	
       else
-  	 set_Preference
-	 render :index
+  	  set_Preference
+	    render :index
       end
     	
   end

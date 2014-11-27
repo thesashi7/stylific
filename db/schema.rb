@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125000109) do
+ActiveRecord::Schema.define(version: 20141126231212) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -34,11 +34,14 @@ ActiveRecord::Schema.define(version: 20141125000109) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
     t.string   "phone_number"
     t.integer  "preference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "description"
   end
 
   create_table "preferences", force: true do |t|

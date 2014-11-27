@@ -10,7 +10,7 @@ def create
   
   authentication = Authentications.find_by_provider_and_uid(@omniauth['provider'], @omniauth['uid'])
 
-  if(@@logingIn ==0)
+  if(@@logingIn ==0) 
      registering(authentication)
   elsif(@@logingIn ==1)
     signingIn(authentication)
@@ -33,16 +33,28 @@ def registering(authentication)
      user = Customer.new
      #  authentication.user_id = user.id   Need to save the user first to generate the automated unique id
      if (@omniauth['info'])
-        user.name = @omniauth['info']['name']
+        user.first_name = @omniauth['info']['first_name']
+        user.last_name = @omniauth['info']['last_name']
+        user.address = @omniauth['info']['location']
+        user.description = @omniauth['info']['description']
         user.email = @omniauth['info']['email']         #auth.info.email
         user.password = Devise.friendly_token[0,20]
      end
+    
+     #need to check if preference exists
+     preference = Preference.find_by_id(RegisterController.id)
+     user.preference_id = preference.id
+   
      if (!user.save)
         if(user.errors.added? :email, :taken)
           user.email = new_email_from_existing(user.email)
           user.save
         end
      end
+     
+     preference.customer_id = user.id
+     preference.save
+
      authentication.user_id = user.id
      authentication.save  
      session[:user_id] = user.id
