@@ -1,5 +1,5 @@
 class CustomerController < ApplicationController
-    before_action :authenticate, [:news, :profile, :settings, :messages]
+    before_action :authenticate, only: [:news, :profile, :settings, :messages]
 	
 	def news
 		
