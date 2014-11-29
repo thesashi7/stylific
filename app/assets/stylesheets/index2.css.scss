@@ -153,3 +153,55 @@ body {
 
 /* Body padding
 ---------------------- */
+
+
+/* MOVING-HEADER
+--------------------------------------*/
+#fading-header{
+  height: 500px;
+  width: 100%;
+  padding: 0;
+  background-color: red;
+}
+
+#fading-img-1, #fading-img-2,
+#fading-img-3, #fading-img-4{
+  position: absolute;
+  top: 55px;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+#fading-img-1{
+  background-image: url("/assets/s1.jpg");
+  -webkit-animation: fade1 10s infinite;
+}
+#fading-img-2{
+  background-image: url("/assets/s2.jpg");
+  -webkit-animation: fade2 10s infinite;
+}
+#fading-img-3{
+  background-image: url("/assets/s3.jpg");
+}
+
+@keyframes fade1
+{
+  0%{opacity: 1;}
+  32%{opacity: 1;}
+  37%{opacity: 0;}
+  95%{opacity: 0;}
+  99%{opacity: 1;}
+  100%{opacity: 1;}
+}
+
+@keyframes fade2
+{
+  0%{opacity: 1;}
+  65%{opacity: 1;}
+  70%{opacity: 0;}
+  99%{opacity: 0;}
+  100%{opacity: 1;}
+}
