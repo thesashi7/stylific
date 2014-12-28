@@ -55,6 +55,19 @@
 					$("#faq").css("display", "block");
 				}
 			});
+
+			function enableFields(event)
+			{
+				$("#address").removeAttr("disabled");
+				$("#city").removeAttr("disabled");
+				$("#state").removeAttr("disabled");
+				$("#zip").removeAttr("disabled");
+				$("#submit-btn").html("Update");
+				$("#submit-btn").attr("id", "update-btn");
+				$("#update-btn").click(function(){
+					alert("Ok, Sashi. You take this data from here.");
+				});
+			}
 		</script>
 	</head>
 
@@ -74,6 +87,72 @@
 					<div id="personal-information">
 						<div id="profile-header" class="page-header">
 							<h1>Personal information</h1>
+						</div>
+						<div class="box">
+							<div class="row">
+								<div class="col-sm-4">
+										<div class="thumbnail" >
+											<img class="img-circle" src="assets/ph.jpg" alt="...">
+										</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="page-header">
+										<h1>Joe Smack</h1>
+									</div>
+										<h5>Contact info:</h5>
+										<br>
+										<div class="input-group">
+											<span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
+											<input type="text" class="form-control" value="joeshmack@mail.com" disabled="" >
+										</div>
+										<br>
+										<div class="input-group">
+											<span class="input-group-addon"><span class=" glyphicon glyphicon-phone"></span></span>
+											<input type="text" class="form-control" value="(512) 123-4567" disabled="" >
+										</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-xs-12">
+									<h3>Shipping info: </h3>
+									<div id="shipping-form">
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="address" placeholder="Address" disabled="" value="123 Herethere St. #12">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputPassword3" class="col-sm-2 control-label">City</label>
+												<div class="col-sm-4">
+													<input type="text" class="form-control" id="city" placeholder="City" disabled="" value="San Antonio">
+												</div>
+
+												<label for="inputPassword3" class="col-sm-1 control-label">State</label>
+												<div class="col-sm-2">
+													<input type="text" class="form-control" id="state" placeholder="State" disabled="" value="CA">
+												</div>
+
+												<label for="inputPassword3" class="col-sm-1 control-label">Zip</label>
+												<div class="col-sm-2">
+													<input type="text" class="form-control" id="zip" placeholder="91232" disabled="" value="91232">
+												</div>
+											</div>
+											<hr>
+											<div class="form-group">
+												<div class="col-sm-offset-2 col-sm-10">
+													<button id="submit-btn" type="submit" class="btn btn-warning pull-right" onclick="enableFields()">Modify shipping information</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div>
+								
+							</div>
 						</div>
 					</div>
 
