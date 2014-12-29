@@ -1,3 +1,7 @@
+<div class="page-header">
+  <h1 id="registration-header">Chose global style</h1>
+</div>
+
 <%= form_for(@preference, html: {class: "form-horizontal"} ) do |p| %>
   <% if @preference.errors.any? %>
     <div id="error_explanation">
@@ -11,93 +15,65 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= p.label(:primaryStyle, class: "col-sm-2 control-label") %>
-    <div class="col-sm-10">
-      <%= p.text_field(:primaryStyle, class: "form-control", placeholder: "style 1") %>
-    </div>
-  </div>
+  <div id="registration-container" class="clearfix">
+    <div id="stage1">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <label class="rb" for="pathstyle1">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+          <input type="radio" name="globalstyle" id="pathstyle1">
+        </div>
 
-  <div class="field form-group">
-    <%= p.label(:secondaryStyle, class: "col-sm-2 control-label") %>
-    <div class="col-sm-10">
-      <%= p.text_field(:secondaryStyle, class: "form-control", placeholder: "style 2") %>
-    </div>
-  </div>
+        <div class="col-sm-4 col-xs-12">
+          <label class="rb" for="pathstyle2">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="radio" name="globalstyle" id="pathstyle2">
+        </div>
 
-  <div class="field form-group">
-    <%= p.label(:size, class: "col-sm-2 control-label") %>
-    <div class="col-sm-10">
-      <%= p.text_field(:size, class: "form-control", placeholder: "size") %>
-    </div> 
-  </div>
+        <div class="col-sm-4 col-xs-12">
+          <label class="rb" for="pathstyle3">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="radio" name="globalstyle" id="pathstyle3">
+        </div>
+      </div>
+      <hr> 
+      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage1()">
+    </div><!-- end of stage1 -->
 
-	 <div class="field form-group">
-    <%= p.label(:height, class: "col-sm-2 control-label") %>
-    <div class="col-sm-10">
-      <%= p.text_field(:height, class: "form-control", placeholder: "height") %>
-    </div>
-  </div>
+    <div id="stage2">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="jacket1">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+          <input type="checkbox" id="jacket1">
+        </div>
 
-	 <div class="field form-group">
-    <%= p.label(:shoeSize, class: "col-sm-2 control-label") %>
-    <div class="col-sm-10">
-      <%= p.text_field(:shoeSize, class: "form-control", placeholder: "shoe size, please. yes, it is important. thank you. :) ") %>
-    </div>
-  </div>
-  
-  <div class="field form-group">
-  <%= p.label(:TEST, class: "col-sm-2 control-label") %>
-    <div class="col-sm-3">
-       <label class="img-label " for="style1"><img src="/assets/suit1.jpg" width="100" height="100"></label>
-       <input id="style1" type="checkbox" value="style1" autocomplete="off"> <br>
-    </div>
-    <div class="col-sm-3">
-       <label class="img-label" for="style2"><img src="/assets/suit1.jpg" width="100" height="100"></label>
-       <input id="style2" type="checkbox" value="style2" autocomplete="off"> <br>
-    </div>
-    <div class="col-sm-3">
-       <label class="img-label" for="style3"><img src="/assets/suit1.jpg" width="100" height="100"></label>
-       <input id="style3" type="checkbox" value="style3" autocomplete="off"> <br>
-    </div>
-  </div>
-  
-  <div class="field form-group">
-    <%= p.label(:height, class: "col-sm-2 control-label") %>
-    <div class="col-sm-2">
-      <select class="form-control" autocomplete="false">
-        <option class="hide-option" value="Height">Height</option>
-        <option value="5.6">5'6"</option>
-        <option value="5.7">5'7"</option>
-        <option value="5.8">5'8"</option>
-        <option value="5.9">5'9"</option>
-      </select>
-    </div>
-    
-    <%= p.label(:waist, class: "col-sm-2 control-label") %>
-    <div class="col-sm-2">
-      <select class="form-control" autocomplete="false">
-        <option class="hide-option" value="Weight">Weight</option>
-        <option value="25">25</option>
-        <option value="28">28</option>
-        <option value="30">30</option>
-        <option value="34">34</option>
-      </select>
-    </div>
-    
-    <%= p.label(:shoeSize, class: "col-sm-2 control-label") %>
-    <div class="col-sm-2">
-      <select class="form-control" autocomplete="false">
-        <option class="hide-option" value="Shoe size">Shoe size</option>
-        <option value="5.6">5'6"</option>
-        <option value="5.7">5'7"</option>
-        <option value="5.8">5'8"</option>
-        <option value="5.9">5'9"</option>
-      </select>
-    </div>
-  </div>
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="jacket2">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="jacket2">
+        </div>
 
-  <div class="actions">
-    <%= p.submit("Enter", class: "pull-right btn btn-default") %>
-  </div>
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="jacket3">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="jacket3">
+        </div>
+      </div>
+      <hr> 
+      <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage1()">
+      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage1()">
+    </div><!-- end of stage2 -->
+
+    <div id="stage3">
+      
+    </div>
+  </div><!-- end of #registration-container -->  
+
 <% end %>

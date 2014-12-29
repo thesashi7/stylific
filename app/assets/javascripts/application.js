@@ -21,9 +21,13 @@
 //= require customer
 
 $(document).ready(function(){
-	$("label").click(function(){
-		$(this).toggleClass("red-border");
+	$(".cb").click(function(){
+      $(this).toggleClass("red-border");
 	});
+  $(".rb").click(function(){
+    $(".rb").removeClass("red-border");
+    $(this).addClass("red-border");
+  });
 });
 
 $(function() {
@@ -47,3 +51,18 @@ $(document).ready(function () {
   });
 });
 
+/* CODE FOR REGISTRATION PROCESS */
+
+function backToStage1()
+{
+  $("#stage2").css("display", "none");
+  $("#stage1").css("display", "block");
+  $(".page-header #registration-header").html("Choose global style");
+}
+
+function processStage1()
+{
+  $("#stage1").css("display", "none");
+  $("#stage2").css("display", "block");
+  $(".page-header #registration-header").html("Choose jacket you like");
+}
