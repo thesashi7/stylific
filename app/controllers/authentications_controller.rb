@@ -80,6 +80,12 @@ def signingIn (authentication)
   if authentication.instance_of?(Authentications)
      user = Customer.where(:id => authentication.user_id).first
      session[:user_id] = user.id
+     current_user.sign_in_count +=1
+     current_user.last_sign_in_at = Time.now
+     current_user.current_sign_in_at = Time.now
+     current_user.last_sign_in_ip = request.remote_ip 
+     current_user.current_sign_in_ip = request.remote_ip 
+     current_user.save
      @@logingIn=0
      redirect_to root_path, :notice => "Logged in successfully"
   else
@@ -101,7 +107,7 @@ end
 #           Output ::  another0@email.com
 def new_email_from_existing(oldEmail)
   newEmail=""
-
+_count
   oldEmail.split("").each do |a|
      if(a == '@')
         newEmail+= @@unique_email_marker.to_s

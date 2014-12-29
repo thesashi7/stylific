@@ -6,4 +6,7 @@ class Customer < ActiveRecord::Base
      has_one :preference
      #has_secure_password
 
+
+    validates :preference_id, :presence => true
+
 end
