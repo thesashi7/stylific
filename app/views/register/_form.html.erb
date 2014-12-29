@@ -68,12 +68,163 @@
       </div>
       <hr> 
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage1()">
-      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage1()">
+      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage2()">
     </div><!-- end of stage2 -->
 
     <div id="stage3">
-      
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="pants1">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+          <input type="checkbox" id="pants1">
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="pants2">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="pants2">
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+          <label class="cb" for="pants3">
+            <img src="assets/bp2.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="pants3">
+        </div>
+      </div>
+      <hr> 
+      <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage2()">
+      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage3()">
     </div>
+
+    <div id="stage4">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <h1 class="header-choose-size">Jacket size</h1>
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Not sure</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h1 class="header-choose-size">Pants size</h1>
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Not sure</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h1 class="header-choose-size">Height</h1>
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Not sure</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage3()">
+      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage4()">
+    </div><!-- end of stage 4 -->
+
+    <div id="stage5">
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="hat1">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+          <input type="checkbox" id="hat1">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="hat2">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="hat2">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="hat3">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="hat3">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="hat4">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="hat4">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="shoes1">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+          <input type="checkbox" id="shoes1">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="shoes2">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="shoes2">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="shoes3">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="shoes3">
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <label class="cb" for="shoes4">
+            <img src="assets/bp.gif" class="img-responsive">
+          </label>
+            <input type="checkbox" id="shoes4">
+        </div>
+      </div>
+      <hr>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <h3 class="header-choose-size">Hat size</h3>
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Not sure</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <h3 class="header-choose-size">Shoes size</h3>
+          <select class="form-control">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Not sure</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage4()">
+      <input type="button" value="Done" class="btn btn-default pull-right" onclick="processStage5()">
+    </div><!-- end of stage 5 -->
+    
   </div><!-- end of #registration-container -->  
 
 <% end %>

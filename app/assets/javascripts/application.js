@@ -59,10 +59,58 @@ function backToStage1()
   $("#stage1").css("display", "block");
   $(".page-header #registration-header").html("Choose global style");
 }
+function backToStage2()
+{
+  $("#stage3").css("display", "none");
+  $("#stage2").css("display", "block");
+  $(".page-header #registration-header").html("Choose jacket <small>all that apply</small>");
+}
+function backToStage3()
+{
+  $("#stage4").css("display", "none");
+  $("#stage3").css("display", "block");
+  $(".page-header #registration-header").html("Choose pants <small>all that apply</small>");
+}
+function backToStage4()
+{
+  $("#stage5").css("display", "none");
+  $("#stage4").css("display", "block");
+  $(".page-header #registration-header").html("Choose size");
+}
 
 function processStage1()
 {
   $("#stage1").css("display", "none");
   $("#stage2").css("display", "block");
-  $(".page-header #registration-header").html("Choose jacket you like");
+  $(".page-header #registration-header").html("Choose jacket <small>all that apply</small>");
 }
+function processStage2()
+{
+  $("#stage2").css("display", "none");
+  $("#stage3").css("display", "block");
+  $(".page-header #registration-header").html("Choose pants <small>all that apply</small>");
+}
+function processStage3()
+{
+  $("#stage3").css("display", "none");
+  $("#stage4").css("display", "block");
+  $(".page-header #registration-header").html("Choose size");
+}
+function processStage4()
+{
+  $("#stage4").css("display", "none");
+  $("#stage5").css("display", "block");
+  $(".page-header #registration-header").html("Choose hat, shoes, and sizes");
+}
+
+
+
+
+
+
+
+
+
+
+
+
