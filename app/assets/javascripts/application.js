@@ -49,9 +49,38 @@ $(document).ready(function () {
   $('[data-toggle="offcanvas"]').click(function () {
     $('.row-offcanvas').toggleClass('active')
   });
+
+  $(".select-stage4").change(function(){
+
+    var s1 = document.getElementById("select-stage4-1").value;
+    var s2 = document.getElementById("select-stage4-2").value;
+    var s3 = document.getElementById("select-stage4-3").value;
+    if( s1 != "nil" && s2 != "nil" && s3 != "nil")
+    {
+      $("#stage4Next").removeAttr("disabled");
+    }else{
+      $("#stage4Next").attr("disabled", "");
+    }
+  });
 });
 
 /* CODE FOR REGISTRATION PROCESS */
+function stage1NextEnable()
+{
+  $("#stage1Next").removeAttr("disabled");
+}
+function stage2NextEnable()
+{
+  $("#stage2Next").removeAttr("disabled");
+}
+function stage3NextEnable()
+{
+  $("#stage3Next").removeAttr("disabled");
+}
+function stage4NextEnable()
+{
+  $("#stage4Next").removeAttr("disabled");
+}
 
 function backToStage1()
 {

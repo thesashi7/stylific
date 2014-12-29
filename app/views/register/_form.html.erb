@@ -19,48 +19,51 @@
     <div id="stage1">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <label class="rb" for="pathstyle1">
+          <h3 class="header-choose-size">Suits</h3>
+          <label class="rb" for="pathstyle1" onclick="stage1NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
           <input type="radio" name="globalstyle" id="pathstyle1">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="rb" for="pathstyle2">
+        <h3 class="header-choose-size">Casual</h3>
+          <label class="rb" for="pathstyle2" onclick="stage1NextEnable()" >
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="radio" name="globalstyle" id="pathstyle2">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="rb" for="pathstyle3">
+        <h3 class="header-choose-size">Sports</h3>
+          <label class="rb" for="pathstyle3" onclick="stage1NextEnable()" >
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="radio" name="globalstyle" id="pathstyle3">
         </div>
       </div>
       <hr> 
-      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage1()">
+      <input id="stage1Next" type="button" value="Next" class="btn btn-default pull-right" onclick="processStage1()" disabled>
     </div><!-- end of stage1 -->
 
     <div id="stage2">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="jacket1">
+          <label class="cb" for="jacket1" onclick="stage2NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
           <input type="checkbox" id="jacket1">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="jacket2">
+          <label class="cb" for="jacket2" onclick="stage2NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="checkbox" id="jacket2">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="jacket3">
+          <label class="cb" for="jacket3" onclick="stage2NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="checkbox" id="jacket3">
@@ -68,27 +71,27 @@
       </div>
       <hr> 
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage1()">
-      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage2()">
+      <input id="stage2Next" type="button" value="Next" class="btn btn-default pull-right" onclick="processStage2()" disabled>
     </div><!-- end of stage2 -->
 
     <div id="stage3">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="pants1">
+          <label class="cb" for="pants1" onclick="stage3NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
           <input type="checkbox" id="pants1">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="pants2">
+          <label class="cb" for="pants2" onclick="stage3NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="checkbox" id="pants2">
         </div>
 
         <div class="col-sm-4 col-xs-12">
-          <label class="cb" for="pants3">
+          <label class="cb" for="pants3" onclick="stage3NextEnable()">
             <img src="assets/bp2.gif" class="img-responsive">
           </label>
             <input type="checkbox" id="pants3">
@@ -96,45 +99,48 @@
       </div>
       <hr> 
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage2()">
-      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage3()">
+      <input id="stage3Next" type="button" value="Next" class="btn btn-default pull-right" onclick="processStage3()" disabled>
     </div>
 
     <div id="stage4">
       <div class="row">
         <div class="col-xs-12 col-sm-4">
           <h1 class="header-choose-size">Jacket size</h1>
-          <select class="form-control">
+          <select id="select-stage4-1" class="form-control select-stage4">
+            <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
             <option value="three">Three</option>
             <option value="four">Four</option>
-            <option value="five">Not sure</option>
+            <option value="notsure">Not sure</option>
           </select>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h1 class="header-choose-size">Pants size</h1>
-          <select class="form-control">
+          <select id="select-stage4-2" class="form-control select-stage4">
+            <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
             <option value="three">Three</option>
             <option value="four">Four</option>
-            <option value="five">Not sure</option>
+            <option value="notsure">Not sure</option>
           </select>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h1 class="header-choose-size">Height</h1>
-          <select class="form-control">
+          <select id="select-stage4-3" class="form-control select-stage4">
+            <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
             <option value="three">Three</option>
             <option value="four">Four</option>
-            <option value="five">Not sure</option>
+            <option value="notsure">Not sure</option>
           </select>
         </div>
       </div>
       <hr>
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage3()">
-      <input type="button" value="Next" class="btn btn-default pull-right" onclick="processStage4()">
+      <input id="stage4Next"  type="button" value="Next" class="btn btn-default pull-right" onclick="processStage4()" disabled>
     </div><!-- end of stage 4 -->
 
     <div id="stage5">
@@ -222,7 +228,7 @@
       </div>
       <hr>
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage4()">
-      <input type="button" value="Done" class="btn btn-default pull-right" onclick="processStage5()">
+      <input type="button" value="Done" class="btn btn-default pull-right" onclick="processStage5()" disabled>
     </div><!-- end of stage 5 -->
     
   </div><!-- end of #registration-container -->  
