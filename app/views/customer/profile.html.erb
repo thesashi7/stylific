@@ -19,8 +19,12 @@
 			.list-group-item{
 				cursor: pointer;
 			}
+			.style-settings-options{
+				display: none;
+			}
 		</style>
 		<script type="text/javascript">
+		
 			$("body").click(function (event){
 				var target = $(event.target);
 				if(target.is(".list-group-item")){
@@ -53,6 +57,9 @@
 					$("#edit-style").css("display", "none");
 					$("#edit-global-style").css("display", "none");
 					$("#faq").css("display", "block");
+				}else if(target.is(".style-settings-header"))
+				{
+					$(target).next(".style-settings-options").slideToggle("fast");
 				}
 			});
 
@@ -68,6 +75,8 @@
 					alert("Ok, Sashi. You take this data from here.");
 				});
 			}
+			
+			
 		</script>
 	</head>
 
@@ -86,7 +95,7 @@
 					<!-- PERSONAL INFORMATOIN -->
 					<div id="personal-information">
 						<div id="profile-header" class="page-header">
-							<h1>Personal information</h1>
+							<h1>Personal personal-information</h1>
 						</div>
 						<div class="box">
 							<div class="row">
@@ -102,7 +111,9 @@
 										<h5>Contact info:</h5>
 										<br>
 										<div class="input-group">
-											<span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
+											<span class="input-group-addon">
+												<span class=" glyphicon glyphicon-envelope"></span>
+											</span>
 											<input type="text" class="form-control" value="joeshmack@mail.com" disabled="" >
 										</div>
 										<br>
@@ -160,6 +171,127 @@
 					<div id="edit-style">
 						<div id="profile-header" class="page-header">
 							<h1>Edit style</h1>
+						</div>
+						<div id="style-settings">
+							<h2 class="style-settings-header">Hats</h2>
+							<div class="style-settings-options">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<h2 class="style-settings-header">Jackets</h2>
+							<div class="style-settings-options">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<h2 class="style-settings-header">Pants</h2>
+							<div class="style-settings-options">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<h2 class="style-settings-header">Shoes</h2>
+							<div class="style-settings-options">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="square-div" style="background-image: url('assets/bp.gif');">
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 

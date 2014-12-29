@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require moment.min
 //= require fullcalendar
+//= require customer
 
 $(document).ready(function(){
 	$("label").click(function(){
@@ -45,3 +46,4 @@ $(document).ready(function () {
     $('.row-offcanvas').toggleClass('active')
   });
 });
+
