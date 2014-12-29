@@ -24,6 +24,7 @@ $(document).ready(function(){
 	$(".cb").click(function(){
       $(this).toggleClass("red-border");
 	});
+
   $(".rb").click(function(){
     $(".rb").removeClass("red-border");
     $(this).addClass("red-border");
@@ -51,7 +52,6 @@ $(document).ready(function () {
   });
 
   $(".select-stage4").change(function(){
-
     var s1 = document.getElementById("select-stage4-1").value;
     var s2 = document.getElementById("select-stage4-2").value;
     var s3 = document.getElementById("select-stage4-3").value;
@@ -71,11 +71,33 @@ function stage1NextEnable()
 }
 function stage2NextEnable()
 {
-  $("#stage2Next").removeAttr("disabled");
+  var cbs21 = document.getElementById("jacket1").checked;
+  var cbs22 = document.getElementById("jacket2").checked;
+  var cbs23 = document.getElementById("jacket3").checked;
+  if(cbs21 || cbs22 || cbs23)
+  {
+    $("#stage2Next").removeAttr("disabled");
+  }
+  else
+  {
+    $("#stage2Next").attr("disabled", "");
+  }
+  
 }
 function stage3NextEnable()
 {
-  $("#stage3Next").removeAttr("disabled");
+  var cbs31 = document.getElementById("pants1").checked;
+  var cbs32 = document.getElementById("pants2").checked;
+  var cbs33 = document.getElementById("pants3").checked;
+  if(cbs31 || cbs32 || cbs33)
+  {
+    $("#stage3Next").removeAttr("disabled");
+  }
+  else
+  {
+    $("#stage3Next").attr("disabled", "");
+  }
+  
 }
 function stage4NextEnable()
 {
