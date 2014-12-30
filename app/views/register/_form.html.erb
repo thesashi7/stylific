@@ -104,7 +104,7 @@
 
     <div id="stage4">
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6">
           <h1 class="header-choose-size">Jacket size</h1>
           <select id="select-stage4-1" class="form-control select-stage4">
             <option value="nil"></option>
@@ -115,20 +115,9 @@
             <option value="notsure">Not sure</option>
           </select>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6">
           <h1 class="header-choose-size">Pants size</h1>
           <select id="select-stage4-2" class="form-control select-stage4">
-            <option value="nil"></option>
-            <option value="one">One</option>
-            <option value="two">Two</option>
-            <option value="three">Three</option>
-            <option value="four">Four</option>
-            <option value="notsure">Not sure</option>
-          </select>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <h1 class="header-choose-size">Height</h1>
-          <select id="select-stage4-3" class="form-control select-stage4">
             <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
@@ -149,28 +138,28 @@
           <label class="cb" for="hat1">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-          <input type="checkbox" id="hat1">
+          <input type="checkbox" id="hat1" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="hat2">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="hat2">
+            <input type="checkbox" id="hat2" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="hat3">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="hat3">
+            <input type="checkbox" id="hat3" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="hat4">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="hat4">
+            <input type="checkbox" id="hat4" onchange="stage5NextEnable()">
         </div>
       </div>
       <hr>
@@ -179,35 +168,36 @@
           <label class="cb" for="shoes1">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-          <input type="checkbox" id="shoes1">
+          <input type="checkbox" id="shoes1" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="shoes2">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="shoes2">
+            <input type="checkbox" id="shoes2" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="shoes3">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="shoes3">
+            <input type="checkbox" id="shoes3" onchange="stage5NextEnable()">
         </div>
 
         <div class="col-sm-3 col-xs-12">
           <label class="cb" for="shoes4">
             <img src="assets/bp.gif" class="img-responsive">
           </label>
-            <input type="checkbox" id="shoes4">
+            <input type="checkbox" id="shoes4" onchange="stage5NextEnable()">
         </div>
       </div>
       <hr>
     <div class="row">
         <div class="col-xs-12 col-sm-6">
           <h3 class="header-choose-size">Hat size</h3>
-          <select class="form-control">
+          <select id="select-stage5-1" class="form-control"  onchange="stage5NextEnable()">
+            <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
             <option value="three">Three</option>
@@ -217,7 +207,8 @@
         </div>
         <div class="col-xs-12 col-sm-6">
           <h3 class="header-choose-size">Shoes size</h3>
-          <select class="form-control">
+          <select id="select-stage5-2" class="form-control"  onchange="stage5NextEnable()">
+            <option value="nil"></option>
             <option value="one">One</option>
             <option value="two">Two</option>
             <option value="three">Three</option>
@@ -228,7 +219,7 @@
       </div>
       <hr>
       <input type="button" value="Previous" class="btn btn-default pull-left" onclick="backToStage4()">
-      <input type="button" value="Done" class="btn btn-default pull-right" onclick="processStage5()" disabled>
+      <input id="stage5Next" type="button" value="Done" class="btn btn-default pull-right" onclick="processStage5()" disabled>
     </div><!-- end of stage 5 -->
     
   </div><!-- end of #registration-container -->  

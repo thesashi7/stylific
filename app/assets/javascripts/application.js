@@ -54,8 +54,7 @@ $(document).ready(function () {
   $(".select-stage4").change(function(){
     var s1 = document.getElementById("select-stage4-1").value;
     var s2 = document.getElementById("select-stage4-2").value;
-    var s3 = document.getElementById("select-stage4-3").value;
-    if( s1 != "nil" && s2 != "nil" && s3 != "nil")
+    if( s1 != "nil" && s2 != "nil")
     {
       $("#stage4Next").removeAttr("disabled");
     }else{
@@ -102,6 +101,30 @@ function stage3NextEnable()
 function stage4NextEnable()
 {
   $("#stage4Next").removeAttr("disabled");
+}
+function stage5NextEnable()
+{
+  var hat1 = document.getElementById("hat1").checked;
+  var hat2 = document.getElementById("hat2").checked;
+  var hat3 = document.getElementById("hat3").checked;
+  var hat4 = document.getElementById("hat4").checked;
+  var shoes1 = document.getElementById("shoes1").checked;
+  var shoes2 = document.getElementById("shoes2").checked;
+  var shoes3 = document.getElementById("shoes3").checked;
+  var shoes4 = document.getElementById("shoes4").checked;
+  var ss51 = document.getElementById("select-stage5-1").value;
+  var ss52 = document.getElementById("select-stage5-2").value;
+  if( (hat1 || hat2 || hat3 || hat4 ) && 
+      (shoes1 || shoes2 || shoes3 || shoes4 ) && 
+      (ss51 != "nil" && ss52 != "nil") )
+  {
+    $("#stage5Next").removeAttr("disabled");
+  }
+  else
+  {
+    $("#stage5Next").attr("disabled", "");
+  }
+  
 }
 
 function backToStage1()
