@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229153121) do
+ActiveRecord::Schema.define(version: 20141229231710) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -48,15 +48,79 @@ ActiveRecord::Schema.define(version: 20141229153121) do
     t.integer  "zip"
   end
 
-  create_table "preferences", force: true do |t|
-    t.string   "primaryStyle"
-    t.string   "secondaryStyle"
+  create_table "hats", force: true do |t|
+    t.integer  "price"
+    t.integer  "total_quantity"
+    t.string   "type_name"
+    t.string   "company"
+    t.string   "color"
+    t.string   "image_path"
+    t.string   "use_info"
+    t.string   "special_info"
+    t.string   "made_of"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "style_name"
     t.string   "size"
-    t.integer  "height"
-    t.float    "shoeSize"
+  end
+
+  create_table "jackets", force: true do |t|
+    t.integer  "price"
+    t.integer  "total_quantity"
+    t.string   "type_name"
+    t.string   "company"
+    t.string   "color"
+    t.string   "image_path"
+    t.string   "use_info"
+    t.string   "special_info"
+    t.string   "made_of"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "style_name"
+    t.string   "size"
+  end
+
+  create_table "pants", force: true do |t|
+    t.integer  "price"
+    t.integer  "total_quantity"
+    t.string   "type_name"
+    t.string   "company"
+    t.string   "color"
+    t.string   "image_path"
+    t.string   "use_info"
+    t.string   "special_info"
+    t.string   "made_of"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "style_name"
+    t.string   "size"
+  end
+
+  create_table "preferences", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
+    t.string   "main_style"
+    t.integer  "jacket_id"
+    t.integer  "shoe_id"
+    t.integer  "hat_id"
+    t.integer  "pant_id"
+  end
+
+  create_table "shoes", force: true do |t|
+    t.float    "price"
+    t.integer  "total_quantity"
+    t.string   "type_name"
+    t.string   "company"
+    t.string   "color"
+    t.string   "image_path"
+    t.string   "use_info"
+    t.string   "special_info"
+    t.string   "made_of"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "style_name"
+    t.string   "size"
   end
 
   create_table "stylists", force: true do |t|

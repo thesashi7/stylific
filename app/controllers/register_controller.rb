@@ -15,7 +15,7 @@ class RegisterController < ApplicationController
    
       respond_to do |format|
         if @preference.save
-	  @@id = @preference.id
+	        @@id = @preference.id
           format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
           format.json { render :show, status: :created, location: @preference }
         
@@ -67,7 +67,7 @@ class RegisterController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def preference_params
-      params.require(:preference).permit(:primaryStyle, :secondaryStyle, :size, :height, :shoeSize)
+      params.require(:preference).permit(:main_style, :jacket_id, :shoe_id, :pant_id, :hat_id)
     end
     
 
