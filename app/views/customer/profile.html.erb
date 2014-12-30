@@ -109,20 +109,20 @@
                 
 										
 									</div>
-										<h5>Contact info:</h5>
+										<h5>Contacts info:</h5>
 										<br>
 										<div class="input-group">
 
 											<span class="input-group-addon">
 												<span class=" glyphicon glyphicon-envelope"></span>
 											</span>
-											<input type="text" class="form-control" value="joeshmack@mail.com" disabled="" >
+											<input type="text" class="form-control" value="<%= current_user.email %>" disabled="" >
 
 										</div>
 										<br>
 										<div class="input-group">
 											<span class="input-group-addon"><span class=" glyphicon glyphicon-phone"></span></span>
-											<input type="text" class="form-control" value="(512) 123-4567" disabled="" >
+											<input type="text" class="form-control" value="<%= current_user.phone_number%>" disabled="" >
 										</div>
 								</div>
 							</div>
@@ -135,23 +135,23 @@
 											<div class="form-group">
 												<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
 												<div class="col-sm-10">
-													<input type="text" class="form-control" id="address" placeholder="Address" disabled="" value="123 Herethere St. #12">
+													<input type="text" class="form-control" id="address" placeholder="Address" disabled="" value="<%= current_user.address%>">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="inputPassword3" class="col-sm-2 control-label">City</label>
 												<div class="col-sm-4">
-													<input type="text" class="form-control" id="city" placeholder="City" disabled="" value="San Antonio">
+													<input type="text" class="form-control" id="city" placeholder="City" disabled="" value="<%= current_user.city%>">
 												</div>
 
 												<label for="inputPassword3" class="col-sm-1 control-label">State</label>
 												<div class="col-sm-2">
-													<input type="text" class="form-control" id="state" placeholder="State" disabled="" value="CA">
+													<input type="text" class="form-control" id="state" placeholder="State" disabled="" value="<%= current_user.state %>">
 												</div>
 
 												<label for="inputPassword3" class="col-sm-1 control-label">Zip</label>
 												<div class="col-sm-2">
-													<input type="text" class="form-control" id="zip" placeholder="91232" disabled="" value="91232">
+													<input type="text" class="form-control" id="zip" placeholder="91232" disabled="" value="<%= current_user.zip %>">
 												</div>
 											</div>
 											<hr>
