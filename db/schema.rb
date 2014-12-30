@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229231710) do
+ActiveRecord::Schema.define(version: 20141230220827) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -101,10 +101,10 @@ ActiveRecord::Schema.define(version: 20141229231710) do
     t.datetime "updated_at"
     t.integer  "customer_id"
     t.string   "main_style"
-    t.integer  "jacket_id"
-    t.integer  "shoe_id"
-    t.integer  "hat_id"
-    t.integer  "pant_id"
+    t.string   "jackets_ids"
+    t.string   "pants_ids"
+    t.string   "hats_ids"
+    t.string   "shoes_ids"
   end
 
   create_table "shoes", force: true do |t|
